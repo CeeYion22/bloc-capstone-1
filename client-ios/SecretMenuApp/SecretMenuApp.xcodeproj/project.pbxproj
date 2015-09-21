@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		218DF7CB864395CAD40FCBB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FFF2296B500E36C0F60E1C /* libPods.a */; };
 		E6347B791BABDA07005EA349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6347B781BABDA07005EA349 /* main.m */; };
 		E6347B7C1BABDA07005EA349 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6347B7B1BABDA07005EA349 /* AppDelegate.m */; };
 		E6347B7F1BABDA07005EA349 /* SecretMenuApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6347B7D1BABDA07005EA349 /* SecretMenuApp.xcdatamodeld */; };
@@ -28,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26EE9A719F21F60A627B0EB9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A8FFF2296B500E36C0F60E1C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4680147B270479AA882B265 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E6347B731BABDA07005EA349 /* SecretMenuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretMenuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6347B771BABDA07005EA349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6347B781BABDA07005EA349 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				218DF7CB864395CAD40FCBB7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +67,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C19185E696730CFA4E2E4A38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8FFF2296B500E36C0F60E1C /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7CECD01B23D41C9C7CFAE6A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C4680147B270479AA882B265 /* Pods.debug.xcconfig */,
+				26EE9A719F21F60A627B0EB9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E6347B6A1BABDA07005EA349 = {
 			isa = PBXGroup;
 			children = (
 				E6347B751BABDA07005EA349 /* SecretMenuApp */,
 				E6347B921BABDA07005EA349 /* SecretMenuAppTests */,
 				E6347B741BABDA07005EA349 /* Products */,
+				D7CECD01B23D41C9C7CFAE6A /* Pods */,
+				C19185E696730CFA4E2E4A38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6347B991BABDA07005EA349 /* Build configuration list for PBXNativeTarget "SecretMenuApp" */;
 			buildPhases = (
+				15A85EE0AE2FD779EE7964A6 /* Check Pods Manifest.lock */,
 				E6347B6F1BABDA07005EA349 /* Sources */,
 				E6347B701BABDA07005EA349 /* Frameworks */,
 				E6347B711BABDA07005EA349 /* Resources */,
+				69A51464BB5A3FB924F4AA36 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,6 +242,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15A85EE0AE2FD779EE7964A6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		69A51464BB5A3FB924F4AA36 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E6347B6F1BABDA07005EA349 /* Sources */ = {
@@ -349,6 +408,7 @@
 		};
 		E6347B9A1BABDA07005EA349 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4680147B270479AA882B265 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SecretMenuApp/Info.plist;
@@ -359,6 +419,7 @@
 		};
 		E6347B9B1BABDA07005EA349 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26EE9A719F21F60A627B0EB9 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SecretMenuApp/Info.plist;
@@ -420,6 +481,7 @@
 				E6347B9B1BABDA07005EA349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6347B9C1BABDA07005EA349 /* Build configuration list for PBXNativeTarget "SecretMenuAppTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +490,7 @@
 				E6347B9E1BABDA07005EA349 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

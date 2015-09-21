@@ -3,6 +3,7 @@ from flask import abort
 from flask import json
 from flask import make_response
 from flask import request
+from flask import url_for
 
 from app import app
 
@@ -38,7 +39,9 @@ menu_items = [
 
 @app.route('/api/v1.0/restaurants', methods=['GET'])
 def get_restaurants():
-    return json.jsonify({'restaurants': restaurants})
+    return json.jsonify({
+        'restaurants': [return_public_restaurant(restaurant) for restaurant in restaurants]
+    })
 
 # Need to add authentication for admin account
 @app.route('/api/v1.0/restaurants', methods=['POST'])
@@ -53,16 +56,19 @@ def create_restaurant():
         'description': request.json.get('description', "")
     }
     restaurants.append(restaurant)
-    print restaurants
  
-    return json.jsonify({'restaurant': restaurant}), 201
+    return json.jsonify({
+        'restaurant': return_public_restaurant(restaurant)
+    }), 201
 
 @app.route('/api/v1.0/restaurants/<int:restaurant_id>', methods=['GET'])
 def get_restaurant(restaurant_id):
     restaurant = [restaurant for restaurant in restaurants if restaurant['id'] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)
-    return json.jsonify({'restaurant': restaurant[0]})
+    return json.jsonify({
+        'restaurant': return_public_restaurant(restaurant[0])
+    })
 
 @app.route('/api/v1.0/restaurants/<int:restaurant_id>', methods=['PUT'])
 def update_restaurant(restaurant_id):
@@ -77,7 +83,9 @@ def update_restaurant(restaurant_id):
         abort(400)
     restaurant[0]['name'] = request.json.get('name', restaurant[0]['name'])
     restaurant[0]['description'] = request.json.get('description', restaurant[0]['description'])
-    return json.jsonify({'restaurant': restaurant[0]})
+    return json.jsonify({
+        'restaurant': return_public_restaurant(restaurant[0])
+    })
 
 @app.route('/api/v1.0/restaurants/<int:restaurant_id>', methods=['DELETE'])
 def delete_restaurant(restaurant_id):
@@ -90,6 +98,15 @@ def delete_restaurant(restaurant_id):
 @app.errorhandler(404)
 def not_found(error):
     return make_response(json.jsonify({'error': 'Not found'}), 404)
+
+def return_public_restaurant(restaurant):
+    public_restaurant = {}
+    for field in restaurant:
+        if field == 'id':
+            public_restaurant['uri'] = url_for('get_restaurant', restaurant_id=restaurant['id'], _external=True)
+        else:
+            public_restaurant[field] = restaurant[field]
+    return public_restaurant
 
 # This is just for debug mode so you don't have to run Apache
 if __name__ == '__main__':
