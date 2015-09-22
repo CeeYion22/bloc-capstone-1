@@ -1,25 +1,37 @@
 //
-//  ViewController.m
+//  SMNDataSource.m
 //  SecretMenuApp
 //
-//  Created by Matthew Liu on 9/17/15.
+//  Created by Matthew Liu on 9/21/15.
 //  Copyright (c) 2015 Unicycle Labs. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SMNDataSource.h"
+
 #import "AFNetworking.h"
+#import <UIKit/UIKit.h>
 
-@interface ViewController ()
+@implementation SMNDataSource
 
-@end
++ (instancetype)sharedInstance {
+    static dispatch_once_t once;
+    static id sharedInstance;
+    dispatch_once(&once, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
 
-@implementation ViewController
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.restaurants = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    NSString *string = [NSString stringWithFormat:@"http://mattdev.ngrok.com/api/v1.0/restaurants"];
+- (void)populateRestaurants {
+    NSString *string = SERVER_BASE_URL;
     NSURL *url = [NSURL URLWithString:string];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -39,14 +51,9 @@
                                                   otherButtonTitles:nil];
         [alertView show];
     }];
-
-    [operation start];
     
-}
+    [operation start];
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -10,39 +10,14 @@ from app import app
 import constants
 from database import db
 
-# Temporary test data - remove this later
-
-restaurants = [
-    {
-        'id': 1,
-        'name': 'Burger King',
-        'description': 'Whoppers and shit'
-    },
-    {
-        'id': 2,
-        'name': 'McDonalds',
-        'description': 'Big Mac Shit'
-    }
-]
-
-menu_items = [
-    {
-        'id': 1,
-        'restaurant_id': 1,
-        'name': 'Secret shit',
-        'description': 'Lots of tomatoes'
-    },
-    {
-        'id': 2,
-        'restaurant_id': 1,
-        'name': 'Loads of crap',
-        'description': 'Super Yummy'
-    }
-]
+#Temporary
+import fake_data as f
 
 @app.route('/api/v1.0/restaurants', methods=['GET'])
 def get_restaurants():
     # Request restaurants from database
+
+    restaurants = f.restaurants
     return json.jsonify({
         'restaurants': [return_public_restaurant(restaurant) for restaurant in restaurants]
     })
@@ -56,6 +31,7 @@ def create_restaurant():
     # Insert restaurant to db
     
     # This is just a temporary hack. Need to create a service call to controller that inserts to DB
+    restaurants = f.restaurants
     restaurant = {
         'id': restaurants[-1]['id'] + 1,
         'name': request.json['name'],
@@ -71,7 +47,7 @@ def create_restaurant():
 def get_restaurant(restaurant_id):
 
     # Request restaurant from database, replace this hack
-
+    restaurants = f.restaurants
     restaurant = [restaurant for restaurant in restaurants if restaurant['id'] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)
@@ -83,7 +59,7 @@ def get_restaurant(restaurant_id):
 def update_restaurant(restaurant_id):
 
     # Update restaurant from database
-
+    restaurants = f.restaurants
     restaurant = [restaurant for restaurant in restaurants if restaurant['id'] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)
@@ -103,7 +79,7 @@ def update_restaurant(restaurant_id):
 def delete_restaurant(restaurant_id):
 
     # Delete restaurant from database
-
+    restaurants = f.restaurants
     restaurant = [restaurant for restaurant in restaurants if restaurant['id'] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)

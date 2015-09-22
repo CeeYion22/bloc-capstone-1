@@ -8,6 +8,12 @@
 
 #import "AppDelegate.h"
 
+#import "SMNDataSource.h"
+#import "SMNMainNavigationController.h"
+#import "SMNRestaurantsCollectionViewController.h"
+
+#import "TestViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -15,8 +21,25 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    [SMNDataSource sharedInstance];
+
+    SMNMainNavigationController *mainViewController = [[SMNMainNavigationController alloc] init];
+//    SMNRestaurantsCollectionViewController *restaurantsViewController = [[SMNRestaurantsCollectionViewController alloc] init];
+    
+    TestViewController *testViewController = [[TestViewController alloc] init];
+    
+//    [mainViewController setViewControllers:@[restaurantsViewController]];
+    
+    [mainViewController setViewControllers:@[testViewController]];
+    self.window.rootViewController = mainViewController;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

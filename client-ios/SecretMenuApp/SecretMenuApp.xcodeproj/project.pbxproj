@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		218DF7CB864395CAD40FCBB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A8FFF2296B500E36C0F60E1C /* libPods.a */; };
+		E6108C3C1BB12E6A0069867C /* SMNRestaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = E6108C3B1BB12E6A0069867C /* SMNRestaurant.m */; };
+		E6108C3F1BB12E7E0069867C /* SMNMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E6108C3E1BB12E7E0069867C /* SMNMenuItem.m */; };
+		E6108C421BB12E920069867C /* SMNDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E6108C411BB12E920069867C /* SMNDataSource.m */; };
+		E6108C451BB12EBF0069867C /* SMNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E6108C441BB12EBF0069867C /* SMNConstants.m */; };
+		E6108C4B1BB132FD0069867C /* SMNMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6108C4A1BB132FD0069867C /* SMNMainNavigationController.m */; };
+		E6108C4E1BB133570069867C /* SMNRestaurantsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6108C4D1BB133570069867C /* SMNRestaurantsCollectionViewController.m */; };
+		E6108C511BB133F40069867C /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6108C501BB133F40069867C /* TestViewController.m */; };
 		E6347B791BABDA07005EA349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6347B781BABDA07005EA349 /* main.m */; };
 		E6347B7C1BABDA07005EA349 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6347B7B1BABDA07005EA349 /* AppDelegate.m */; };
 		E6347B7F1BABDA07005EA349 /* SecretMenuApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6347B7D1BABDA07005EA349 /* SecretMenuApp.xcdatamodeld */; };
-		E6347B821BABDA07005EA349 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6347B811BABDA07005EA349 /* ViewController.m */; };
-		E6347B851BABDA07005EA349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6347B831BABDA07005EA349 /* Main.storyboard */; };
 		E6347B871BABDA07005EA349 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6347B861BABDA07005EA349 /* Images.xcassets */; };
 		E6347B8A1BABDA07005EA349 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E6347B881BABDA07005EA349 /* LaunchScreen.xib */; };
 		E6347B961BABDA07005EA349 /* SecretMenuAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6347B951BABDA07005EA349 /* SecretMenuAppTests.m */; };
@@ -32,15 +37,26 @@
 		26EE9A719F21F60A627B0EB9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A8FFF2296B500E36C0F60E1C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4680147B270479AA882B265 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E6108C3A1BB12E6A0069867C /* SMNRestaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNRestaurant.h; sourceTree = "<group>"; };
+		E6108C3B1BB12E6A0069867C /* SMNRestaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMNRestaurant.m; sourceTree = "<group>"; };
+		E6108C3D1BB12E7E0069867C /* SMNMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNMenuItem.h; sourceTree = "<group>"; };
+		E6108C3E1BB12E7E0069867C /* SMNMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMNMenuItem.m; sourceTree = "<group>"; };
+		E6108C401BB12E920069867C /* SMNDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNDataSource.h; sourceTree = "<group>"; };
+		E6108C411BB12E920069867C /* SMNDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMNDataSource.m; sourceTree = "<group>"; };
+		E6108C431BB12EBF0069867C /* SMNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNConstants.h; sourceTree = "<group>"; };
+		E6108C441BB12EBF0069867C /* SMNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMNConstants.m; sourceTree = "<group>"; };
+		E6108C491BB132FD0069867C /* SMNMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNMainNavigationController.h; sourceTree = "<group>"; };
+		E6108C4A1BB132FD0069867C /* SMNMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMNMainNavigationController.m; sourceTree = "<group>"; };
+		E6108C4C1BB133570069867C /* SMNRestaurantsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMNRestaurantsCollectionViewController.h; sourceTree = "<group>"; };
+		E6108C4D1BB133570069867C /* SMNRestaurantsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMNRestaurantsCollectionViewController.m; sourceTree = "<group>"; };
+		E6108C4F1BB133F40069867C /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		E6108C501BB133F40069867C /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		E6347B731BABDA07005EA349 /* SecretMenuApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecretMenuApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6347B771BABDA07005EA349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6347B781BABDA07005EA349 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6347B7A1BABDA07005EA349 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6347B7B1BABDA07005EA349 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E6347B7E1BABDA07005EA349 /* SecretMenuApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SecretMenuApp.xcdatamodel; sourceTree = "<group>"; };
-		E6347B801BABDA07005EA349 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E6347B811BABDA07005EA349 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E6347B841BABDA07005EA349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6347B861BABDA07005EA349 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E6347B891BABDA07005EA349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E6347B8F1BABDA07005EA349 /* SecretMenuAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SecretMenuAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +100,43 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E6108C361BB12D760069867C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E6347B7A1BABDA07005EA349 /* AppDelegate.h */,
+				E6347B7B1BABDA07005EA349 /* AppDelegate.m */,
+				E6108C401BB12E920069867C /* SMNDataSource.h */,
+				E6108C411BB12E920069867C /* SMNDataSource.m */,
+				E6108C431BB12EBF0069867C /* SMNConstants.h */,
+				E6108C441BB12EBF0069867C /* SMNConstants.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		E6108C371BB12D920069867C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E6108C491BB132FD0069867C /* SMNMainNavigationController.h */,
+				E6108C4A1BB132FD0069867C /* SMNMainNavigationController.m */,
+				E6108C4C1BB133570069867C /* SMNRestaurantsCollectionViewController.h */,
+				E6108C4D1BB133570069867C /* SMNRestaurantsCollectionViewController.m */,
+				E6108C4F1BB133F40069867C /* TestViewController.h */,
+				E6108C501BB133F40069867C /* TestViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E6108C391BB12DE20069867C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E6108C3A1BB12E6A0069867C /* SMNRestaurant.h */,
+				E6108C3B1BB12E6A0069867C /* SMNRestaurant.m */,
+				E6108C3D1BB12E7E0069867C /* SMNMenuItem.h */,
+				E6108C3E1BB12E7E0069867C /* SMNMenuItem.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		E6347B6A1BABDA07005EA349 = {
 			isa = PBXGroup;
 			children = (
@@ -107,11 +160,9 @@
 		E6347B751BABDA07005EA349 /* SecretMenuApp */ = {
 			isa = PBXGroup;
 			children = (
-				E6347B7A1BABDA07005EA349 /* AppDelegate.h */,
-				E6347B7B1BABDA07005EA349 /* AppDelegate.m */,
-				E6347B801BABDA07005EA349 /* ViewController.h */,
-				E6347B811BABDA07005EA349 /* ViewController.m */,
-				E6347B831BABDA07005EA349 /* Main.storyboard */,
+				E6108C361BB12D760069867C /* Base */,
+				E6108C391BB12DE20069867C /* Models */,
+				E6108C371BB12D920069867C /* Controllers */,
 				E6347B861BABDA07005EA349 /* Images.xcassets */,
 				E6347B881BABDA07005EA349 /* LaunchScreen.xib */,
 				E6347B7D1BABDA07005EA349 /* SecretMenuApp.xcdatamodeld */,
@@ -228,7 +279,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6347B851BABDA07005EA349 /* Main.storyboard in Resources */,
 				E6347B8A1BABDA07005EA349 /* LaunchScreen.xib in Resources */,
 				E6347B871BABDA07005EA349 /* Images.xcassets in Resources */,
 			);
@@ -283,8 +333,14 @@
 			files = (
 				E6347B7C1BABDA07005EA349 /* AppDelegate.m in Sources */,
 				E6347B7F1BABDA07005EA349 /* SecretMenuApp.xcdatamodeld in Sources */,
-				E6347B821BABDA07005EA349 /* ViewController.m in Sources */,
+				E6108C3F1BB12E7E0069867C /* SMNMenuItem.m in Sources */,
+				E6108C3C1BB12E6A0069867C /* SMNRestaurant.m in Sources */,
+				E6108C511BB133F40069867C /* TestViewController.m in Sources */,
+				E6108C4E1BB133570069867C /* SMNRestaurantsCollectionViewController.m in Sources */,
+				E6108C451BB12EBF0069867C /* SMNConstants.m in Sources */,
+				E6108C421BB12E920069867C /* SMNDataSource.m in Sources */,
 				E6347B791BABDA07005EA349 /* main.m in Sources */,
+				E6108C4B1BB132FD0069867C /* SMNMainNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,14 +363,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E6347B831BABDA07005EA349 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E6347B841BABDA07005EA349 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E6347B881BABDA07005EA349 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
