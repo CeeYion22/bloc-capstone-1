@@ -4,8 +4,11 @@ from flask import json
 from flask import make_response
 from flask import request
 from flask import url_for
+from flask.ext.sqlalchemy import SQLAlchemy
 
 from app import app
+import constants
+from database import db
 
 # Temporary test data - remove this later
 
@@ -39,6 +42,7 @@ menu_items = [
 
 @app.route('/api/v1.0/restaurants', methods=['GET'])
 def get_restaurants():
+    # Request restaurants from database
     return json.jsonify({
         'restaurants': [return_public_restaurant(restaurant) for restaurant in restaurants]
     })
@@ -48,6 +52,8 @@ def get_restaurants():
 def create_restaurant():
     if not request.json or not 'name' in request.json:
         abort(404)
+
+    # Insert restaurant to db
     
     # This is just a temporary hack. Need to create a service call to controller that inserts to DB
     restaurant = {
@@ -63,6 +69,9 @@ def create_restaurant():
 
 @app.route('/api/v1.0/restaurants/<int:restaurant_id>', methods=['GET'])
 def get_restaurant(restaurant_id):
+
+    # Request restaurant from database, replace this hack
+
     restaurant = [restaurant for restaurant in restaurants if restaurant['id'] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)
@@ -72,6 +81,9 @@ def get_restaurant(restaurant_id):
 
 @app.route('/api/v1.0/restaurants/<int:restaurant_id>', methods=['PUT'])
 def update_restaurant(restaurant_id):
+
+    # Update restaurant from database
+
     restaurant = [restaurant for restaurant in restaurants if restaurant['id'] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)
@@ -89,6 +101,9 @@ def update_restaurant(restaurant_id):
 
 @app.route('/api/v1.0/restaurants/<int:restaurant_id>', methods=['DELETE'])
 def delete_restaurant(restaurant_id):
+
+    # Delete restaurant from database
+
     restaurant = [restaurant for restaurant in restaurants if restaurant['id'] == restaurant_id]
     if len(restaurant) == 0:
         abort(404)
